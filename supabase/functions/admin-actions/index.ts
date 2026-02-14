@@ -14,7 +14,7 @@ const DepositActionSchema = z.object({
 
 const TransferSchema = z.object({
   user_code: z.string().regex(/^GT\d{6}$/, "Invalid user code format"),
-  amount: z.number().positive("Amount must be positive").max(10000000, "Amount too large"),
+  amount: z.number().min(100, "Minimum transfer is 100 kyats").max(10000000, "Amount too large"),
 });
 
 const ActionSchema = z.object({
