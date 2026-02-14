@@ -72,10 +72,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(session?.user ?? null);
 
         if (session?.user) {
-          setTimeout(() => {
-            fetchProfile(session.user.id);
-            checkAdmin(session.user.id);
-          }, 0);
+          fetchProfile(session.user.id);
+          checkAdmin(session.user.id);
         } else {
           setProfile(null);
           setIsAdmin(false);
