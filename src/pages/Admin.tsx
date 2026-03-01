@@ -215,6 +215,27 @@ export default function Admin() {
               </motion.div>
             </div>
 
+            {/* Environment Variables */}
+            <div className="gaming-card rounded-xl p-6">
+              <h2 className="font-gaming text-lg font-bold mb-4 flex items-center gap-2">
+                <LayoutDashboard className="h-5 w-5 text-primary" /> Environment Variables
+              </h2>
+              <div className="space-y-3">
+                <div className="space-y-1">
+                  <Label className="text-xs text-muted-foreground">VITE_SUPABASE_URL</Label>
+                  <div className="bg-muted border border-border rounded-md px-3 py-2 font-mono text-sm break-all select-all">
+                    {import.meta.env.VITE_SUPABASE_URL || 'Not set'}
+                  </div>
+                </div>
+                <div className="space-y-1">
+                  <Label className="text-xs text-muted-foreground">VITE_SUPABASE_ANON_KEY</Label>
+                  <div className="bg-muted border border-border rounded-md px-3 py-2 font-mono text-xs break-all select-all">
+                    {import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || 'Not set'}
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Direct Transfer */}
             <div className="gaming-card rounded-xl p-6">
               <h2 className="font-gaming text-lg font-bold mb-4 flex items-center gap-2">
