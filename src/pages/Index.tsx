@@ -71,14 +71,9 @@ const Index = () => {
       {/* Action Buttons */}
       <div className="px-4 py-2 flex gap-3">
         {user ? (
-          <>
-            <button className="flex-1 py-2.5 rounded-lg gaming-btn text-sm font-semibold text-primary-foreground" onClick={() => navigate('/deposit')}>
-              ငွေဖြည့်မည်
-            </button>
-            <button className="flex-1 py-2.5 rounded-lg bg-muted border border-border text-sm font-semibold text-foreground" onClick={() => navigate('/deposit-history')}>
-              အော်ဒါများ
-            </button>
-          </>
+          <button className="flex-1 py-2.5 rounded-lg gaming-btn text-sm font-semibold text-primary-foreground" onClick={() => navigate('/deposit')}>
+            ငွေဖြည့်မည်
+          </button>
         ) : (
           <>
             <button className="flex-1 py-2.5 rounded-lg gaming-btn text-sm font-semibold text-primary-foreground" onClick={() => navigate('/login')}>
