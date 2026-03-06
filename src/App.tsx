@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/hooks/useAuth";
+import { useOneSignal } from "@/hooks/useOneSignal";
 import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -19,9 +20,15 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+function OneSignalInit() {
+  useOneSignal();
+  return null;
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <AuthProvider>
+      <OneSignalInit />
       <TooltipProvider>
         <Toaster />
         <Sonner />

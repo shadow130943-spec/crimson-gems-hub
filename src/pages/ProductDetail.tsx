@@ -140,6 +140,16 @@ export default function ProductDetail() {
         });
       if (orderError) throw orderError;
 
+      // Send push notification to admins
+      supabase.functions.invoke('notify-admins', {
+        body: {
+          product_name: product.name,
+          item_name: selectedItem.name,
+          price: selectedItem.price,
+          game_id: gameId.trim(),
+        },
+      }).catch(err => console.error('Push notify error:', err));
+
       setWalletBalance(walletBalance - selectedItem.price);
       toast.success(`${selectedItem.name} မှာယူပြီးပါပြီ!`);
       setDialogOpen(false);
